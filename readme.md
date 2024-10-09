@@ -51,7 +51,7 @@ Una vez activado el ambiente virtual se deben instalar las librerias requeridas 
 
     pip install -r requirements.txt
 
-- ### 4. ejecutar el modelo
+- ### 5. Ejecucion del modelo
 
 despues de instalar las librerias se ejecuta el modelo usando el archivo **main_students.py**
 
