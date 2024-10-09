@@ -2,7 +2,7 @@
 
 Este Proyecto implementa un modelo de busqueda semantica usando Python y dara un acercamiento al uso de vectores para procesamiento del lenguaje natural (NLP) con hugging face, esta es la tecnología detrás de herramientas como chatgpt, Llama, o incluso google.
 
-Las instrucciones a continuación lo guiarán a través de la configuración de un entorno virtual, la instalación de las dependencias requeridas y la ejecución del script principal de Python.
+Las instrucciones a continuación lo guiarán a través de la configuración de un entorno virtual, la instalación de las librerias requeridas y la ejecución del script principal de Python.
 
 
 ## Prerequisitos
