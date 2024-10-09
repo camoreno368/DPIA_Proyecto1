@@ -24,26 +24,17 @@ def compute_similarity(example, query_embedding):
 
 def main(query,df):
     
-
-
-    #while True:
-   # entrada = input("Introduce patron busqueda (o escribe 'salir' para terminar): ")
-
-    #if query.lower() == 'salir':  # Compara la entrada con 'salir' (sin importar mayúsculas)
-     #   print("Programa finalizado.")
-        #break  # Sale del bucle si el usuario escribe 'salir'
-
     try:
-        #nombre = (entrada)  # Intenta convertir la entrada a un número
+        
         model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
         query_embedding = model.encode(query)
         df['similarity'] = df.apply(lambda x: compute_similarity(x, query_embedding), axis=1)
         df = df.sort_values(by='similarity', ascending=False)
         print(df[['Title','Description','similarity']].head())
-        # Aquí puedes añadir más lógica según lo que necesites hacer con el número
+        
     except ValueError:
-        print("Por favor, PATRON busqueda o 'salir'.")
+        print("ingresa el termino de busqueda (o Salir para Terminar):")
 
 if __name__ == '__main__':
     
