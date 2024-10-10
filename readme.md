@@ -10,6 +10,13 @@ Las instrucciones a continuación lo guiarán a través de la configuración de 
 - Python 3.10 o superior instalado en su maquina
 - Git o Github Desktop (Opcional si desea clonar este repositorio)
 
+## Carpetas y Archivos
+
+-**data:** Contiene la Base de datos de Peliculas (IMDB Top 1000.csv)
+-**src:** Contiene archivo .py del modelo (main_students.py) 
+-**requirements.txt:** Contiene librerias para ejecucion
+-**semantic_search_students.ipynb:**  archivo de pruebas 
+
 
 ### Pasos Para la ejecucion
 
@@ -61,4 +68,4 @@ al ejecutar el modelo le solicitara el nombre de la pelicula o descripcion y est
 
 ---
 > Nota: 
->* el archivo semantic_search_students.ipynb es un notebook para pruebas que se ejecuta en collab en donde se detalla el funcionamiento del modelo
+>* el archivo **semantic_search_students.ipynb** es un notebook el cual se puede ejecutar en collab o jupiter y sirve para probar el modelo y tiene el detalle del codigo
