@@ -69,4 +69,4 @@ al ejecutar el modelo le solicitara el nombre de la pelicula o descripcion y est
 
 ---
 > Nota: 
->* el archivo **semantic_search_students.ipynb** es un notebook el cual se puede ejecutar en collab o jupiter y sirve para probar el modelo y tiene el detalle del codigo
+>* el archivo **semantic_search_students.ipynb** es un notebook el cual se puede ejecutar en collab o jupiter y sirve para probar el modelo y permite visualizar el codigo detallado
