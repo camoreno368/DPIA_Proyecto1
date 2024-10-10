@@ -12,12 +12,11 @@ Las instrucciones a continuación lo guiarán a través de la configuración de 
 
 ## Carpetas y Archivos
 
-    - **data:** Contiene la Base de datos de Peliculas (IMDB Top 1000.csv)
-    - **src:** Contiene archivo .py del modelo (main_students.py) 
-    - **requirements.txt:** Contiene librerias para ejecucion
-    - **semantic_search_students.ipynb:**  archivo de pruebas
-    - **.gitignore:** contiene las exclusiones al repositorio como es el caso de ambientes virtuales 
-
+- data: Contiene la Base de datos de Peliculas (IMDB Top 1000.csv)
+- src: Contiene archivo .py del modelo (main_students.py) 
+- requirements.txt: Contiene librerias para ejecucion
+- semantic_search_students.ipynb:  archivo de pruebas
+- .gitignore: contiene las exclusiones al repositorio como es el caso de ambientes virtuales 
 
 
 ### Pasos Para la ejecucion
