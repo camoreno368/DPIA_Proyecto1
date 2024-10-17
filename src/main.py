@@ -6,6 +6,10 @@ from abc import ABC, abstractmethod
 
 # **Principio DIP: Creación de una abstracción para la estrategia de similitud de embeddings**
 class SimilarityStrategy(ABC):
+    '''
+    La Clase SimilarityStrategy es una interfaz abstracta que define el metodo compute_similarity
+    esta interfaz se usara en la calse 
+    '''
     @abstractmethod
     def compute_similarity(self, embedding, query_embedding):
         pass
