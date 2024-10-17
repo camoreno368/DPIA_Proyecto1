@@ -2,6 +2,8 @@
 
 Este Proyecto implementa un modelo de busqueda semantica usando Python y dara un acercamiento al uso de vectores para procesamiento del lenguaje natural (NLP) con hugging face, esta es la tecnología detrás de herramientas como chatgpt, Llama, o incluso google.
 
+En el codigo se aplican varios principos **SOLID**, asi como el patron de diseño **Strategy**
+
 Las instrucciones a continuación lo guiarán a través de la configuración de un entorno virtual, la instalación de las librerias requeridas y la ejecución del script principal de Python.
 
 
@@ -9,6 +11,7 @@ Las instrucciones a continuación lo guiarán a través de la configuración de 
 
 - Python 3.10 o superior instalado en su maquina
 - Git o Github Desktop (Opcional si desea clonar este repositorio)
+- Docker Desktop
 
 ## Carpetas y Archivos
 
@@ -17,6 +20,8 @@ Las instrucciones a continuación lo guiarán a través de la configuración de 
 - requirements.txt: Contiene librerias para ejecucion
 - semantic_search_students.ipynb:  archivo de pruebas
 - .gitignore: contiene las exclusiones al repositorio como es el caso de ambientes virtuales 
+- Dockerfile : archivo inicializacion Docker
+- test: carpeta con archivos de Prueba
 
 
 ### Pasos Para la ejecucion
