@@ -2,7 +2,7 @@
 import pytest
 import numpy as np
 import pandas as pd
-from src.main2 import DataLoader, CosineSimilarityStrategy, EmbeddingModel, SemanticSearch
+from main import DataLoader, CosineSimilarityStrategy, EmbeddingModel, SemanticSearch
 
 def test_file_not_found():
     loader = DataLoader('non_existent_file.csv')
