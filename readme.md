@@ -89,30 +89,30 @@ este comando crea la carpeta htmlcov en la cual se encuentra el archivo **index.
 
 ### Pasos Para la ejecucion en Docker
 
-- ### 1. Clonar Repositorio (Opcional)
+- ### 1. Clonar Repositorio 
     - para clonar el repositorio debe usar el siguiente comando: 
 
-    git clone https://github.com/camoreno368/DPIA_Proyecto1.git
+        git clone https://github.com/camoreno368/DPIA_Proyecto1.git
 
     - ingresas a la carpeta del Repositorio
 
-    cd DPIA_Proyecto1
+        cd DPIA_Proyecto1
 
 - ### 2. Ejecucion en Docker
 lo siguiente comandos le serviran para crear una imagen en docker y ejecutar el contenedor con la aplicacion de busqueda semantica
 
-## Creacion de Imagen
+### 3. Creacion de Imagen
    - dentro de la carpeta DPIA_Proyecto1 que es donde se encuentra el archivo Dockerfile se ejecuta el siguiente comando:
 
-    docker build -t semantic . 
+    docker build -t semantic .
 
-## captura de ID de imagen
+### 4. captura de ID de imagen
 
 - se ejecuta el siguiente comando para capturar el ID de la imagen previamente creada
 
-    docker images 
+    docker images
 
-## Ejecucion del Contenedor
+### 5. Ejecucion del Contenedor
 
     docker run -it ID_IMAGEN 
 
