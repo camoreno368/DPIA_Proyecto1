@@ -30,13 +30,39 @@ Las instrucciones a continuación lo guiarán para la ejecucion del proyecto de 
 
 para la realizacion de la pruebas se desarrollaron cinco metodos los cual validan las funcionalidades clave del sistema para búsqueda semántica, asegurando que las clases y métodos implementados sigan el comportamiento esperado. para la ejecucion de las pruebas unitarias se utilizó pytest, el cual que facilita la ejecución y mantenimiento de las pruebas.
 
-para la implementacion de los metodos se creo el archivo test_sematic.py el cual se encuentra dentro de la carpeta **test**
+
+- ### Creacion del ambiente Virtual para Pruebas
+para realizar las pruebas se recomienda crear un ambiente virtual para ejecutar el proyecto debe hacerlo usando los siguientes pasos:
+
+## Windows
+
+    python -m venv venv  
+
+## MacOS or Linux
+
+    python3 -m venv venv
+
+- ### 3. Activacion del ambiente Virtual
+
+Despues de crear el ambiente virtual debe activarlo
+
+## Windows
+
+    venv\Scripts\activate 
+
+## MacOS or Linux
+
+    source venv/bin/activate
+
+- ### 4. Instalacion de Librerias
+
+Una vez activado el ambiente virtual se deben instalar las librerias requeridas usando el archivo **requirements.txt**
+
+    pip install -r requirements.txt
 
 ## Ejecucion de Pruebas
 
-- Se instalan las librerias Pytest y Coverage
-    pip install pytest
-    pip install coverage
+- para la implementacion de los metodos se creo el archivo test_sematic.py el cual se encuentra dentro de la carpeta **test**
 
 - Luego de creado el archivo test_sematic.py, para realizar las pruebas de los metodos se uso el siguiente comando:
 
@@ -57,6 +83,8 @@ para la implementacion de los metodos se creo el archivo test_sematic.py el cual
     coverage html
 
 este comando crea la carpeta htmlcov en la cual se encuentra el archivo **index.html** el cual muestra de una manera grafica los resultados de la covertura total que para este caso fue del **76%**
+
+![alt text](coverage.JPG)
 
 
 ### Pasos Para la ejecucion en Docker
