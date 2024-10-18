@@ -4,11 +4,12 @@ import os
 from sentence_transformers import SentenceTransformer, util
 from abc import ABC, abstractmethod
 
-# **Principio DIP: Creación de una abstracción para la estrategia de similitud de embeddings**
+# **Principio DI (Dependency Inversion): Creación de una abstracción para la estrategia de similitud de embeddings**
 class SimilarityStrategy(ABC):
     '''
     La Clase SimilarityStrategy es una interfaz abstracta que define el metodo compute_similarity
-    esta interfaz se usara en la calse 
+    Esta interfaz se usa en la clase SemanticSearch y permite desacoplar la lógica de búsqueda semántica 
+    de la forma en que se calcula la similitud, permitiendo usar diferentes algoritmos de similitud sin cambiar el código del sistema principal.
     '''
     @abstractmethod
     def compute_similarity(self, embedding, query_embedding):
@@ -16,14 +17,21 @@ class SimilarityStrategy(ABC):
 
 # **Aplicación del Patrón Strategy: Estrategia para calcular la similitud utilizando cos_sim**
 class CosineSimilarityStrategy(SimilarityStrategy):
+    '''
+    la Clase CosineSimilarityStrategy Implementa la estrategia concreta para calcular la similitud utilizando la función cos_sim de la librería sentence_transformers. 
+    Al heredar de la clase abstracta SimilarityStrategy, puede ser usada de forma intercambiable sin modificar el comportamiento de la clase SemanticSearch.
+    '''
     def compute_similarity(self, embedding, query_embedding):
         return util.cos_sim(embedding, query_embedding).item()
 
-# **Principio SRP: Clase para cargar y preparar los datos**
+# **Principio SR (Single Responsability): Clase para cargar y preparar los datos**
 class DataLoader:
+    '''
+    La Clase DataLoader tiene como única responsabilidad cargar y preparar los datos a partir de un archivo CSV, eliminando duplicados y creando una columna de búsqueda.
+    '''
     def __init__(self, filepath):
         self.filepath = filepath
-    
+   
     def load_data(self):
         """Carga el archivo CSV y lo prepara eliminando duplicados y creando la columna de búsqueda."""
         if not os.path.exists(self.filepath):
@@ -34,8 +42,11 @@ class DataLoader:
         df['Busqueda'] = 'Titulo: ' + df['Title'] + ' | ' + 'Description: ' + df['Description'] + '|' + df['Cast'] + ' | ' + 'Genre :' + df['Genre']
         return df
 
-# **Principio SRP: Clase para manejar el modelo y generar embeddings**
+# **Principio SR (Single Responsability): Clase para manejar el modelo y generar embeddings**
 class EmbeddingModel:
+    '''
+     la Clase EmbeddingModel se encarga de generar los embeddings a partir de los datos cargados en el DataFrame.
+    '''
     def __init__(self, model_name='sentence-transformers/all-MiniLM-L6-v2'):
         self.model = SentenceTransformer(model_name)
     
@@ -46,8 +57,12 @@ class EmbeddingModel:
         #df['embeddings'] = embeddings.tolist()
         return df
 
-# **Principio OCP: Clase que realiza la búsqueda semántica. Se puede extender sin modificar el código original**
+# **Principio OC (Open Closed): Clase que realiza la búsqueda semántica. Se puede extender sin modificar el código original**
 class SemanticSearch:
+    '''
+    La Clase SemanticSearch: Utiliza la interfaz SimilarityStrategy para calcular la similitud, 
+    lo que permite que otras estrategias (por ejemplo, EuclideanSimilarityStrategy) se añadan sin cambiar esta clase.
+    '''
     def __init__(self, model: SentenceTransformer, similarity_strategy: SimilarityStrategy):
         self.model = model
         self.similarity_strategy = similarity_strategy
@@ -60,11 +75,14 @@ class SemanticSearch:
         df = df.sort_values(by='similarity', ascending=False)
         return df[['Title', 'Description', 'similarity']].head(10)
 
-# **Principio SRP: Clase para manejar la interfaz de usuario**
+# **Principio SR (Single Responsability): Clase para manejar la interfaz de usuario se separan en metodos la entrada y salida**
 class UserInterface:
+    '''
+    La Clase UserInterface se encarga de interactuar con el usuario para obtener las busquedas y mostrar los resultados.
+    '''
     @staticmethod
     def get_user_query():
-        """Obtiene la consulta del usuario."""
+        """Obtiene la busqueda del usuario."""
         return input('\nIngresa el término de búsqueda (o Salir para terminar): ')
     
     @staticmethod
