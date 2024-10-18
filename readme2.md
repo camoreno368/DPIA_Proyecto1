@@ -84,7 +84,7 @@ Una vez activado el ambiente virtual se deben instalar las librerias requeridas 
 
 este comando crea la carpeta htmlcov en la cual se encuentra el archivo **index.html** el cual muestra de una manera grafica los resultados de la covertura total que para este caso fue del **76%**
 
-![alt text](coverage.JPG)
+![alt text](Coverage.png)
 
 
 ### Pasos Para la ejecucion en Docker
